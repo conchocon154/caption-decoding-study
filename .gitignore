@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+# COCO images and annotations: 6.5 GB, fetched by scripts/download.sh
+data/raw/
+data/val2014/
+data/annotations/
+# Derived: rebuilt by scripts/prepare.py
+data/processed/
+# Trained weights
+models/

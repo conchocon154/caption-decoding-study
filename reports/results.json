@@ -1,0 +1,159 @@
+{
+  "test_images": 1500,
+  "vocabulary": 5894,
+  "splits": {
+    "train": 31998,
+    "val": 4050,
+    "test": 4456
+  },
+  "results": [
+    {
+      "strategy": "greedy",
+      "beam_width": 1,
+      "bleu_1": 0.6784876500620947,
+      "bleu_2": 0.4958128398999581,
+      "bleu_3": 0.3479713788184793,
+      "bleu_4": 0.24328933016822932,
+      "mean_length": 9.662666666666667,
+      "distinct_1": 0.03201324686076997,
+      "distinct_2": 0.1095890410958904,
+      "unique_caption_pct": 73.33333333333333,
+      "top10_caption_share_pct": 7.333333333333333,
+      "vocabulary_used": 464,
+      "ms_per_image": 0.2
+    },
+    {
+      "strategy": "beam-3",
+      "beam_width": 3,
+      "bleu_1": 0.6850588933705769,
+      "bleu_2": 0.508979248027522,
+      "bleu_3": 0.37152812246686584,
+      "bleu_4": 0.27232052418591646,
+      "mean_length": 9.138,
+      "distinct_1": 0.03144378784562632,
+      "distinct_2": 0.1039567461292701,
+      "unique_caption_pct": 62.2,
+      "top10_caption_share_pct": 9.4,
+      "vocabulary_used": 431,
+      "ms_per_image": 19.2
+    },
+    {
+      "strategy": "beam-5",
+      "beam_width": 5,
+      "bleu_1": 0.6795412922286683,
+      "bleu_2": 0.5081603214678373,
+      "bleu_3": 0.37472368908279796,
+      "bleu_4": 0.2785285060050162,
+      "mean_length": 8.996,
+      "distinct_1": 0.0312731584407885,
+      "distinct_2": 0.09721527430381857,
+      "unique_caption_pct": 55.4,
+      "top10_caption_share_pct": 10.466666666666667,
+      "vocabulary_used": 422,
+      "ms_per_image": 31.9
+    },
+    {
+      "strategy": "beam-10",
+      "beam_width": 10,
+      "bleu_1": 0.6706435637786411,
+      "bleu_2": 0.4981493264698917,
+      "bleu_3": 0.36620760194708396,
+      "bleu_4": 0.27047841579904114,
+      "mean_length": 8.942666666666666,
+      "distinct_1": 0.030341434322349783,
+      "distinct_2": 0.0912371999328521,
+      "unique_caption_pct": 49.8,
+      "top10_caption_share_pct": 11.866666666666667,
+      "vocabulary_used": 407,
+      "ms_per_image": 65.9
+    }
+  ],
+  "significance": [
+    {
+      "baseline": "greedy",
+      "strategy": "beam-3",
+      "observed_difference": 0.02361,
+      "ci_low": 0.01481,
+      "ci_high": 0.03266,
+      "p_value": 0.0,
+      "significant": true,
+      "contender_win_pct": 39.9,
+      "identical_output_pct": 27.1
+    },
+    {
+      "baseline": "greedy",
+      "strategy": "beam-5",
+      "observed_difference": 0.02821,
+      "ci_low": 0.01882,
+      "ci_high": 0.03812,
+      "p_value": 0.0,
+      "significant": true,
+      "contender_win_pct": 42.9,
+      "identical_output_pct": 21.1
+    },
+    {
+      "baseline": "greedy",
+      "strategy": "beam-10",
+      "observed_difference": 0.02185,
+      "ci_low": 0.01189,
+      "ci_high": 0.03206,
+      "p_value": 0.0,
+      "significant": true,
+      "contender_win_pct": 42.1,
+      "identical_output_pct": 19.4
+    },
+    {
+      "baseline": "beam-5",
+      "strategy": "beam-10",
+      "observed_difference": -0.00636,
+      "ci_low": -0.01182,
+      "ci_high": -0.00123,
+      "p_value": 0.0168,
+      "significant": true,
+      "contender_win_pct": 10.7,
+      "identical_output_pct": 74.9
+    }
+  ],
+  "examples": {
+    "greedy": [
+      "a woman holding a toothbrush in her hand",
+      "a train on a track with a train on it",
+      "a large building with a clock on the top",
+      "a close up of a knife on a table",
+      "a woman is holding a kite in a park",
+      "a small boat is sitting on the water",
+      "a giraffe standing next to a fence in a zoo",
+      "a herd of sheep standing on top of a lush green field"
+    ],
+    "beam-3": [
+      "a young girl brushing her teeth with a toothbrush",
+      "a train on a track with a train on it",
+      "a group of people standing in front of a building",
+      "a close up of a knife on a table",
+      "a woman holding a kite in a park",
+      "a small boat in a body of water",
+      "a giraffe standing next to a wooden fence",
+      "a herd of sheep standing on top of a lush green field"
+    ],
+    "beam-5": [
+      "a young girl brushing her teeth with a toothbrush",
+      "a train traveling down tracks next to a forest",
+      "a group of people standing in front of a building",
+      "a close up of a knife on a table",
+      "a woman holding a kite in a park",
+      "a small boat in a body of water",
+      "a giraffe standing next to a wooden fence",
+      "a herd of sheep standing on top of a lush green field"
+    ],
+    "beam-10": [
+      "a young girl brushing her teeth with a toothbrush",
+      "a train that is sitting on the tracks",
+      "a group of people standing in front of a building",
+      "a close up of a knife on a table",
+      "a group of people standing on top of a lush green field",
+      "a small boat in a body of water",
+      "a couple of giraffe standing next to each other",
+      "a herd of sheep standing on top of a lush green field"
+    ]
+  }
+}

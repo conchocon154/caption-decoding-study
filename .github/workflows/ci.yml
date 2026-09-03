@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install pandas numpy matplotlib nltk tqdm pytest
+
+      # COCO is 6.5 GB, so CI never downloads it. Every test runs against
+      # tensors and captions constructed in tests/conftest.py, which is also how
+      # the decoding checks can assert exact answers - a beam of width one has
+      # to reproduce greedy decoding whatever the weights are.
+      - name: Tests
+        run: python -m pytest tests -q

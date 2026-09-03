@@ -1,0 +1,5 @@
+baseline,strategy,observed_difference,ci_low,ci_high,p_value,significant,contender_win_pct,identical_output_pct
+greedy,beam-3,0.02361,0.01481,0.03266,0.0,True,39.9,27.1
+greedy,beam-5,0.02821,0.01882,0.03812,0.0,True,42.9,21.1
+greedy,beam-10,0.02185,0.01189,0.03206,0.0,True,42.1,19.4
+beam-5,beam-10,-0.00636,-0.01182,-0.00123,0.0168,True,10.7,74.9
