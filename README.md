@@ -8,6 +8,9 @@ trained and evaluated on MS-COCO 2014.
 [![CI](https://github.com/conchocon154/caption-decoding-study/actions/workflows/ci.yml/badge.svg)](https://github.com/conchocon154/caption-decoding-study/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+> Written up as a case study — the same findings with the charts, the method
+> and the caveats: **[conchocon154.github.io](https://conchocon154.github.io/)**
+
 Beam search is the default decoder for captioning models, and "use a beam of 10"
 is common advice. This study measures what a wider beam actually buys, and what
 it costs.
